@@ -9,20 +9,20 @@ DOMAIN-SUFFIX,dns.msftncsi.com
 DOMAIN-SUFFIX,ipv6.msftconnecttest.com
 DOMAIN-SUFFIX,istoreos.com
 DOMAIN-SUFFIX,aihdde.com
-DOMAIN-SUFFIX,openwrt.ai
-DOMAIN-SUFFIX,dl.openwrt.ai
-DOMAIN-SUFFIX,istore.istoreos.com
-DOMAIN-SUFFIX,wkdaily.cpolar.top
-DOMAIN-SUFFIX,mao.fan
-DOMAIN-SUFFIX,blog.cyida.com
-DOMAIN-SUFFIX,yichafen.com
-DOMAIN-SUFFIX,zyyme.com
-DOMAIN-SUFFIX,stash.wiki
-DOMAIN-SUFFIX,linux.do
-DOMAIN-SUFFIX,www.techxiaofei.com
-DOMAIN-SUFFIX,docs.canets.org
-DOMAIN-SUFFIX,myip.ipip.net
-DOMAIN-SUFFIX,5ddd.com
+#DOMAIN-SUFFIX,openwrt.ai
+#DOMAIN-SUFFIX,dl.openwrt.ai
+#DOMAIN-SUFFIX,istore.istoreos.com
+#DOMAIN-SUFFIX,wkdaily.cpolar.top
+#DOMAIN-SUFFIX,mao.fan
+#DOMAIN-SUFFIX,blog.cyida.com
+#DOMAIN-SUFFIX,yichafen.com
+#DOMAIN-SUFFIX,zyyme.com
+#DOMAIN-SUFFIX,stash.wiki
+#DOMAIN-SUFFIX,linux.do
+#DOMAIN-SUFFIX,www.techxiaofei.com
+#DOMAIN-SUFFIX,docs.canets.org
+#DOMAIN-SUFFIX,myip.ipip.net
+#DOMAIN-SUFFIX,5ddd.com
 
 # 域名关键字匹配
 DOMAIN-KEYWORD,mirror
