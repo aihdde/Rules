@@ -18,6 +18,7 @@ DOMAIN-SUFFIX,missav.ws
 DOMAIN-SUFFIX,opensubtitles.com
 DOMAIN-SUFFIX,yifysubtitles.ch
 DOMAIN-SUFFIX,yts.mx
+DOMAIN-SUFFIX,frp.104300.xyz
 
 # docker rules 
 DOMAIN-SUFFIX,compose-spec.io
