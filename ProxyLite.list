@@ -15,6 +15,7 @@ DOMAIN-SUFFIX,nevergiveup.us.kg
 DOMAIN-SUFFIX,random.ouonet.org
 DOMAIN-SUFFIX,123av.com
 DOMAIN-SUFFIX,missav.ws
+
 # docker rules 
 DOMAIN-SUFFIX,compose-spec.io
 DOMAIN-SUFFIX,docker.com
