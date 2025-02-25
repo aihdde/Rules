@@ -128,7 +128,7 @@ const rurekey = {
   土耳其: /伊斯坦布尔/g,
   泰国: /泰國|曼谷/g,
   法国: /巴黎/g,
-  南非: /约翰内斯堡|Johannesburg/g
+  南非: /约翰内斯堡|Johannesburg/g,
   G: /\d\s?GB/gi,
   Esnc: /esnc/gi,
 };
