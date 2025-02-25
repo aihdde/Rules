@@ -8,7 +8,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: 🟢 直连
-    url: "http://vpn.aihdde.com:3001/8vtmpf6DhLxCCVSUR1ut/download/collection/%E5%85%A8%E9%83%A8"
+    url: ""
 
 # 用于下载订阅时指定UA
 global-ua: clash
