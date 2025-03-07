@@ -25,8 +25,8 @@ DOMAIN-SUFFIX,myip.ipip.net
 DOMAIN-SUFFIX,5ddd.com
 DOMAIN-SUFFIX,mirrors.vsean.net
 DOMAIN-SUFFIX,noedgeai.com
-IP-CIDR,180.163.146.102/32,no-resolve
 DOMAIN-SUFFIX,gh-proxy.com
+IP-CIDR,180.163.146.102/32,no-resolve
 
 # iptv
 DOMAIN-SUFFIX,drive.mxmy.net
