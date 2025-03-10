@@ -36,9 +36,9 @@ geox-url:
   
 # 控制面板
 external-controller: 0.0.0.0:9090
-secret: ""
+secret: "123456"
 external-ui: ui
-external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
+external-ui-url: "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
 
 # 匹配进程 always/strict/off
 find-process-mode: strict
@@ -157,10 +157,10 @@ proxies:
   udp: true
  
 # 锚点
-pr: &pr {type: select, proxies: [节点选择, 自动选择, 手动切换, 全球直连, IPV6节点, 香港自动, 台湾自动, 新加坡自动, 日本自动, 韩国自动, 美国自动, 英国自动, 香港节点, 台湾节点, 新加坡节点, 日本节点, 韩国节点, 美国节点, 英国节点, 其他国家, 🟢 直连]}
+pr: &pr {type: select, proxies: [节点选择, 自动选择, 手动切换, 全球直连, IPV6节点, 香港自动, 台湾自动, 新加坡自动, 日本自动, 韩国自动, 美国自动, 英国自动, 欧洲自动, 香港节点, 台湾节点, 新加坡节点, 日本节点, 韩国节点, 美国节点, 英国节点, 欧洲节点, 其他国家, 🟢 直连]}
 # 策略组
 proxy-groups:
-  - {name: 节点选择, type: select, proxies: [自动选择, 手动切换, IPV6节点, 香港自动, 台湾自动, 新加坡自动, 日本自动, 韩国自动, 美国自动, 英国自动, 香港节点, 台湾节点, 新加坡节点, 日本节点, 韩国节点, 美国节点, 英国节点, 其他国家, 🟢 直连], icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/check.png"}
+  - {name: 节点选择, type: select, proxies: [自动选择, 手动切换, IPV6节点, 香港自动, 台湾自动, 新加坡自动, 日本自动, 韩国自动, 美国自动, 英国自动, 欧洲自动, 香港节点, 台湾节点, 新加坡节点, 日本节点, 韩国节点, 美国节点, 英国节点, 欧洲节点, 其他国家, 🟢 直连], icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/check.png"}
   - {name: 手动切换, type: select, include-all: true, filter: "^((?!(直连)).)*$", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/select.png"}
   - {name: 自动选择, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(直连)).)*$", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/sync.png"}
   - {name: IPV6节点, type: url-test, include-all: true, icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/ipv6.png", filter: "(?i)v6|ipv6"}
@@ -193,27 +193,30 @@ proxy-groups:
   - {name: 游戏平台, <<: *pr, icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/game.png"}
   - {name: 全球直连, type: select, proxies: [🟢 直连, 节点选择], icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/direct.png"}
   - {name: 漏网之鱼, <<: *pr, icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/fish.png"}
-  - {name: 香港自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/hong-kong.png"}
-  - {name: 台湾自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(台|TW|(?i)Twaiwan))^((?!(港|日|韩|新|深|美)).)*$", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/taiwan.png"}
-  - {name: 新加坡自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(新|SG|(?i)Singapore))^((?!(港|台|日|韩|深|美|刷新)).)*$", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/singapore.png"}
-  - {name: 日本自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美|刷新)).)*$", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/japan.png"}
-  - {name: 韩国自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(韩|KR|(?i)Korea))^((?!(港|台|日|新|美)).)*$", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/south-korea.png"}
-  - {name: 美国自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新)).)*$", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/usa.png"}
-  - {name: 英国自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(英|GB|(?i)England|British))^((?!(港|台|日|韩|新)).)*$", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/united-kingdom.png"}
-  - {name: 香港节点, type: select, include-all: true, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/hong-kong.png"}
-  - {name: 台湾节点, type: select, include-all: true, filter: "(?=.*(台|TW|(?i)Twaiwan))^((?!(港|日|韩|新|深|美)).)*$", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/taiwan.png"}
-  - {name: 新加坡节点, type: select, include-all: true, filter: "(?=.*(新|SG|(?i)Singapore))^((?!(港|台|日|韩|深|美|刷新)).)*$", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/singapore.png"}
-  - {name: 日本节点, type: select, include-all: true, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美|刷新)).)*$", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/japan.png"}
-  - {name: 韩国节点, type: select, include-all: true, filter: "(?=.*(韩|KR|(?i)Korea))^((?!(港|台|日|新|美)).)*$", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/south-korea.png"}
-  - {name: 美国节点, type: select, include-all: true, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新)).)*$", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/usa.png"}
-  - {name: 英国节点, type: select, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(英|GB|(?i)England|British))^((?!(港|台|日|韩|新)).)*$", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/united-kingdom.png"}
-  - {name: 其他国家, type: select, include-all: true, filter: "^((?!(直连|港|台|日|韩|新|深|美)).)*$", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/country.png"}
+  - {name: 香港自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(香港|hk|hongkong|Hong Kong)", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/hong-kong.png"}
+  - {name: 台湾自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(台|🇹🇼|TW|Taiwan)", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/taiwan.png"}
+  - {name: 新加坡自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(新|🇸🇬|SG|singapore)", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/singapore.png"}
+  - {name: 日本自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(日本|🇯🇵|JP|Japan)", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/japan.png"}
+  - {name: 韩国自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(韩国|🇰🇷|KR|Korea)", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/south-korea.png"}
+  - {name: 美国自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(美|🇺🇲|US|America|United States)", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/usa.png"}
+  - {name: 英国自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(英|GB|UK|England|British)", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/united-kingdom.png"}
+  - {name: 欧洲自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(俄罗斯|德国|土耳其|荷兰|法国|意大利|瑞士|西班牙|波兰|卢森堡|罗马尼亚|葡萄牙|希腊|瑞典|乌克兰|挪威|格鲁吉亚|阿塞拜疆|摩尔多瓦|塞尔维亚|克罗地亚|冰岛|匈牙利|波黑|DE|FR|Türkiye|Netherlands|Switzerland|Sweden|Portugal|Poland|España|Romania|Iceland|SaltyFish)", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/european-union.png"}
+  - {name: 香港节点, type: select, include-all: true, filter: "(?i)(香港|hk|hongkong|Hong Kong)", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/hong-kong.png"}
+  - {name: 台湾节点, type: select, include-all: true, filter: "(?i)(台|🇹🇼|TW|Taiwan)", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/taiwan.png"}
+  - {name: 新加坡节点, type: select, include-all: true, filter: "(?i)(新|🇸🇬|SG|singapore)", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/singapore.png"}
+  - {name: 日本节点, type: select, include-all: true, filter: "(?i)(日本|🇯🇵|JP|Japan)", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/japan.png"}
+  - {name: 韩国节点, type: select, include-all: true, filter: "(?i)(韩国|🇰🇷|KR|Korea)", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/south-korea.png"}
+  - {name: 美国节点, type: select, include-all: true, filter: "(?i)(美|🇺🇲|US|America|United States)", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/usa.png"}
+  - {name: 英国节点, type: select, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(英|GB|UK|England|British)", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/united-kingdom.png"}
+  - {name: 欧洲节点, type: select, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(俄罗斯|德国|土耳其|荷兰|法国|意大利|瑞士|西班牙|波兰|卢森堡|罗马尼亚|葡萄牙|希腊|瑞典|乌克兰|挪威|格鲁吉亚|阿塞拜疆|摩尔多瓦|塞尔维亚|克罗地亚|冰岛|匈牙利|波黑|DE|FR|Türkiye|Netherlands|Switzerland|Sweden|Portugal|Poland|España|Romania|Iceland|SaltyFish)", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/european-union.png"}
+  - {name: 其他国家, type: select, include-all: true, filter: "^((?!(直连|港|台|日|韩|新|深|美|英|德|俄|土|荷|法|意|西|波|卢|瑞)).)*$", icon: "https://raw.githubusercontent.com/aihdde/Rules/refs/heads/main/icon/country.png"}
 
 rules:
   # 防止 Telegram 加载转圈
   - IP-CIDR,95.161.76.100/31,REJECT-DROP,no-resolve
   # 禁用QUIC
   - AND,((NETWORK,UDP),(DST-PORT,443)),REJECT
+  - DST-PORT,123,全球直连
   - RULE-SET,private_domain,全球直连
   - RULE-SET,direct_domain,全球直连
   - RULE-SET,direct_blackmatrix7,全球直连
@@ -228,14 +231,16 @@ rules:
   - RULE-SET,steam_cn_domain,全球直连
   - RULE-SET,steamcdn,全球直连
   - RULE-SET,btdownload,全球直连  
-  - RULE-SET,apple_domain,Apple
+  - RULE-SET,Cloudflare_domain,节点选择
   - RULE-SET,proxylite,节点选择
+  - RULE-SET,appleTV,AppleTV
+  - RULE-SET,apple_domain,Apple
   - RULE-SET,openai_domain,AI
   - RULE-SET,ai!cn_domain,AI
   - RULE-SET,bilibili_domain,哔哩哔哩
   - RULE-SET,biliintl_domain,哔哩东南亚
   - RULE-SET,bahamut_domain,巴哈姆特
-  - RULE-SET,media_cn_domain,国内媒体
+  - RULE-SET,media_cn_domain,国内媒体  
   - RULE-SET,github_domain,GitHub
   - RULE-SET,youtube_domain,YouTube
   - RULE-SET,google_domain,Google
@@ -252,7 +257,6 @@ rules:
   - RULE-SET,disney_domain,Disney
   - RULE-SET,prime_domain,Prime
   - RULE-SET,hulu_domain,Hulu
-  - RULE-SET,appleTV,AppleTV
   - RULE-SET,discord_domain,Discord  
   - RULE-SET,facebook_domain,Meta
   - RULE-SET,whatsapp_domain,Meta
@@ -297,8 +301,9 @@ rule-providers:
   fcm_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/googlefcm.mrs" }
   google_play: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/google-play.mrs" }
   github_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs" }
+  Cloudflare_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/cloudflare.mrs" }
   microsoft_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs" }
-  apple_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-cn.mrs" }
+  apple_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.mrs" }
   apple_cn_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/apple%40cn.mrs" }
   meta_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/meta.mrs" }
   facebook_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/facebook.mrs" }
