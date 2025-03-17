@@ -137,19 +137,19 @@ dns:
     - tls://1.12.12.12
     - tls://223.5.5.5
   proxy-server-nameserver:
-    - tls://doh.pub
+    - tls://dot.pub
     - tls://dns.alidns.com
   nameserver:
-    - tls://doh.pub
+    - tls://dot.pub
     - tls://dns.alidns.com
   nameserver-policy:
     "rule-set:private_domain,direct_domain,direct_blackmatrix7,ai_cn_domain,apple_cn_domain,alibaba_domain,aliyun_domain,iptv,bank_cn_domain,xiaomi_domain,NetEaseMusic,steam_cn_domain,steamcdn,btdownload,media_cn_domain,cn_domain":
-      - tls://doh.pub
+      - tls://dot.pub
       - tls://dns.alidns.com
     "rule-set:geolocation-!cn":
-      - tls://dns.google
       - tls://one.one.one.one
- 
+      - tls://dns.google
+
    
 proxies:
 - name: "🟢 直连"
