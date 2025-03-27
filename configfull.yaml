@@ -36,7 +36,7 @@ geox-url:
   
 # 控制面板
 external-controller: 0.0.0.0:9090
-secret: "123456"
+secret: ""
 external-ui: ui
 external-ui-url: "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
 
